@@ -56,15 +56,15 @@ class AuthService {
   loginWithGoogle() {
     return this.account.createOAuth2Session(
       "google",
-      "http://localhost:5173",
-      "http://localhost:5173/login"
+      "http://blogify02.vercel.app/",
+      "http://blogify02.vercel.app/login"
     );
   }
   loginWithGithub() {
     return this.account.createOAuth2Session(
       "github",
-      "http://localhost:5173/",
-      "http://localhost:5173/login"
+      "http://blogify02.vercel.app/",
+      "http://blogify02.vercel.app/login"
     );
   }
 }
