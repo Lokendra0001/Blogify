@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import postService from "../appwrite/postService";
 import { Button, Container, PostCard } from "../components/Index";
-import noPost from "../assests/NOPost.jpg";
+import noPost from "../assests/NoPost.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
