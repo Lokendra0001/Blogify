@@ -128,7 +128,7 @@ function PostCard({ $id, title, featuredImage, $updatedAt, content, like }) {
           </div>
         </Link>
 
-        <div className="flex justify-between items-center mt-auto px-2">
+        <div className="flex justify-between items-center mt-auto px-2 bg-gray-50">
           {loading ? (
             <Skeleton variant="rectangular" width={80} height={32} />
           ) : (
