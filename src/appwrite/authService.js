@@ -56,15 +56,15 @@ class AuthService {
   loginWithGoogle() {
     return this.account.createOAuth2Session(
       "google",
-      "http://blogify02.vercel.app/",
-      "http://blogify02.vercel.app/login"
+      "http://blogify03.vercel.app/",
+      "http://blogify03.vercel.app/login"
     );
   }
   loginWithGithub() {
     return this.account.createOAuth2Session(
       "github",
-      "http://blogify02.vercel.app/",
-      "http://blogify02.vercel.app/login"
+      "http://blogify03.vercel.app/",
+      "http://blogify03.vercel.app/login"
     );
   }
 }
