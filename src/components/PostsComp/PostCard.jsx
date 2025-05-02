@@ -42,7 +42,11 @@ function PostCard({ $id, title, featuredImage, $updatedAt, content }) {
               animation="wave"
             />
           ) : (
-            <img src={imageUrl} alt={title} className="w-full h-full object-cover object-[0_25%]" />
+            <img
+              src={imageUrl}
+              alt={title}
+              className="w-full h-full object-cover object-[0_25%]"
+            />
           )}
         </div>
         <div className="p-4 flex flex-col justify-between h-[40%] bg-gray-50">
@@ -50,7 +54,7 @@ function PostCard({ $id, title, featuredImage, $updatedAt, content }) {
             <Skeleton variant="text" width="80%" height={24} animation="wave" />
           ) : (
             <div className="flex justify-between">
-              <h2 className="text-lg font-semibold text-gray-800 truncate">
+              <h2 className="text-lg font-semibold text-blue-800 truncate">
                 {title}
               </h2>
               <p className="text-xs text-gray-500">
