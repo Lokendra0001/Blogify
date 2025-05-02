@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "../Index";
+import { Button, Container, LogoutBtn } from "../Index";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import logo from "../../assests/Logo.png";
@@ -213,9 +213,8 @@ function Header() {
                 {/* Logout Button (if logged in) */}
                 {user && (
                   <div className="p-4 border-t border-gray-100">
-                    <button
+                    <LogoutBtn
                       onClick={() => {
-                        console.log("Logging out...");
                         setIsSideOpen(false);
                       }}
                       className="flex items-center gap-3 w-full px-3 py-3 text-red-500 hover:bg-red-50 rounded-lg transition-colors text-sm font-medium"
@@ -224,7 +223,7 @@ function Header() {
                         <LogOut className="w-5 h-5" />
                       </span>
                       Log Out
-                    </button>
+                    </LogoutBtn>
                   </div>
                 )}
               </div>

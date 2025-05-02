@@ -1,5 +1,5 @@
 import conf from "../conf/conf";
-import { Client, Account, ID } from "appwrite";
+import { Client, Account, ID, OAuthProvider } from "appwrite";
 
 class AuthService {
   client = new Client();
@@ -51,6 +51,21 @@ class AuthService {
     } catch (error) {
       console.log("User NOt Found " + error);
     }
+  }
+
+  loginWithGoogle() {
+    return this.account.createOAuth2Session(
+      "google",
+      "http://localhost:5173",
+      "http://localhost:5173/login"
+    );
+  }
+  loginWithGithub() {
+    return this.account.createOAuth2Session(
+      "github",
+      "http://localhost:5173/",
+      "http://localhost:5173/login"
+    );
   }
 }
 

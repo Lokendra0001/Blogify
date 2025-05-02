@@ -19,7 +19,6 @@ function ProfileComponent() {
   const userData = useSelector((state) => state.auth.userData);
   useEffect(() => {
     if (!userData?.$id) return;
-    console.log(userData);
     const fetchData = async () => {
       const posts = await postService.getAllPosts();
       if (posts) {

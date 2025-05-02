@@ -45,12 +45,12 @@ function Post() {
           <img
             src={postService.getFile(post.featuredImage)}
             alt={post.title}
-            className="w-full h-[600px]  object-cover object-[0_10%] rounded-t-xl"
+            className="w-full   object-cover md:object-[0_10%] rounded-t-xl object-center "
           />
 
           <div className="p-6">
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-extrabold mb-2  text-[#1c59ad]">
+            <h1 className="text-2xl md:text-4xl font-extrabold mb-2  text-[#1c59ad]">
               {post.title}
             </h1>
 
@@ -67,7 +67,7 @@ function Post() {
 
             {/* Content */}
             <div
-              className="text-gray-700 leading-7 prose max-w-none mb-8"
+              className="text-gray-700 leading-7 prose max-w-none mb-8 "
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
