@@ -21,7 +21,7 @@ class postServices {
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug,
-        { title, content, featuredImage, status, userId }
+        { title, content, featuredImage, status, userId, like: 0 }
       );
     } catch (error) {
       console.error("Error creating post:", error);
@@ -39,6 +39,25 @@ class postServices {
       );
     } catch (error) {
       console.log("Error Editing Post ::" + error);
+    }
+  }
+
+  async updateLikes(likes, slug) {
+    try {
+      const like = "like";
+      const complete = await this.database.updateDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectionId,
+        slug,
+        {
+          [like]: likes,
+        }
+      );
+
+      if (complete) console.log("completed");
+      else console.log("not");
+    } catch (err) {
+      console.log("Update Like error ::" + err);
     }
   }
 
