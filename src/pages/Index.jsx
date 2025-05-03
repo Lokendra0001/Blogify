@@ -5,4 +5,16 @@ import Post from "./Post";
 import About from "./About";
 import Login from "./Login";
 import Signup from "./Signup";
-export { Home, EditPost, MyAccount, Post, About, Login, Signup };
+import Message from "./Message";
+import PrivacyPolicy from "./PrivacyPolicy";
+export {
+  Home,
+  EditPost,
+  MyAccount,
+  Post,
+  About,
+  Login,
+  Signup,
+  Message,
+  PrivacyPolicy,
+};

@@ -127,6 +127,7 @@ function PostForm() {
             <Input
               type="text"
               label="Slug :"
+              readOnly={true}
               className="w-full bg-white"
               {...register("slug", { required: true })}
               onInput={(e) => {

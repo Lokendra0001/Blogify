@@ -97,26 +97,6 @@ export default function Footer() {
                   Privacy Policy
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/terms"
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "hover:text-gray-400"
-                  }
-                >
-                  Terms & Conditions
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/support"
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-600" : "hover:text-gray-400"
-                  }
-                >
-                  Support
-                </NavLink>
-              </li>
             </ul>
           </div>
 

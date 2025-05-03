@@ -11,8 +11,10 @@ import {
   EditPost,
   Home,
   Login,
+  Message,
   MyAccount,
   Post,
+  PrivacyPolicy,
   Signup,
 } from "./pages/Index.jsx";
 
@@ -82,7 +84,12 @@ const router = createBrowserRouter([
         children: [
           { path: "/myAccount/", element: <ProfileCard /> },
           { path: "/myAccount/my-post", element: <EditPost /> },
+          { path: "/myAccount/message", element: <Message /> },
         ],
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

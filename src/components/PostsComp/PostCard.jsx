@@ -76,7 +76,7 @@ function PostCard({ $id, title, featuredImage, $updatedAt, content, like }) {
 
   return (
     <>
-      <div className="w-full h-[360px] bg-white shadow-md transition-transform transform duration-300 overflow-hidden">
+      <div className="w-full h-[360px] bg-slate-50 shadow-md transition-transform transform duration-300 overflow-hidden">
         <Link to={`/post/${$id}`} className="block h-[88%]">
           <div className="w-full h-[70%] overflow-hidden ">
             {loading ? (

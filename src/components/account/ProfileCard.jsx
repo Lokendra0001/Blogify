@@ -9,10 +9,12 @@ import {
   Heart,
   Users,
   Zap,
+  LogOutIcon,
 } from "lucide-react";
 import postService from "../../appwrite/postService";
 import { useSelector } from "react-redux";
-import { LogoutBtn } from "../Index";
+import { Button, LogoutBtn } from "../Index";
+import { Link } from "react-router-dom";
 
 function ProfileComponent() {
   const [postsNo, setPostNo] = useState(0);
@@ -103,47 +105,30 @@ function ProfileComponent() {
 
       {/* Action Buttons with Gradient Hover */}
       <div className="space-y-3">
-        {[
-          {
-            icon: <Mail className="w-5 h-5" />,
-            label: "Messages",
-            color: "from-blue-500 to-blue-600",
-          },
-
-          {
-            icon: <LogOut className="w-5 h-5" />,
-            label: "Logout",
-            color: "from-red-400 to-red-500",
-          },
-        ].map((item, index) =>
-          index === 1 ? (
-            <LogoutBtn
-              key={index}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/90 hover:shadow-lg transition-all duration-300 group 
-              hover:bg-gradient-to-r ${item.color} hover:text-white focus:outline-none`}
+        <Link to={"/myAccount/message"}>
+          <button
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/90 hover:shadow-lg transition-all duration-300 group cursor-pointer
+               hover:bg-gradient-to-r from-blue-500 to-blue-600  hover:text-white focus:outline-none`}
+          >
+            <span
+              className={`p-2 rounded-full bg-white/20 group-hover:bg-white/30`}
             >
-              <span
-                className={`p-2 rounded-full bg-white/20 group-hover:bg-white/30`}
-              >
-                {item.icon}
-              </span>
-              <span className="font-medium">{item.label}</span>
-            </LogoutBtn>
-          ) : (
-            <button
-              key={index}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/90 hover:shadow-lg transition-all duration-300 group cursor-pointer
-               hover:bg-gradient-to-r ${item.color} hover:text-white focus:outline-none`}
-            >
-              <span
-                className={`p-2 rounded-full bg-white/20 group-hover:bg-white/30`}
-              >
-                {item.icon}
-              </span>
-              <span className="font-medium">{item.label}</span>
-            </button>
-          )
-        )}
+              <Mail className="w-5 h-5" />
+            </span>
+            <span className="font-medium">Messages</span>
+          </button>
+        </Link>
+        <LogoutBtn
+          className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/90 hover:shadow-lg transition-all duration-300 group 
+              hover:bg-gradient-to-r from-red-400 to-red-500 hover:text-white focus:outline-none`}
+        >
+          <span
+            className={`p-2 rounded-full bg-white/20 group-hover:bg-white/30`}
+          >
+            <LogOutIcon className="w-5 h-5" />
+          </span>
+          <span className="font-medium">LogOut</span>
+        </LogoutBtn>
       </div>
     </div>
   );
