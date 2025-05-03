@@ -3,11 +3,11 @@ import authService from "./appwrite/authService";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "./store/authSlice";
 import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   useEffect(() => {
     const loadingUser = async () => {
       const user = await authService.getCurrentuser();

@@ -50,7 +50,8 @@ class AuthService {
       const user = await this.account.get();
       if (user) return user;
     } catch (error) {
-      console.log("User NOt Found " + error);
+      // console.log("User NOt Found " + error);
+      return error;
     }
   }
 
