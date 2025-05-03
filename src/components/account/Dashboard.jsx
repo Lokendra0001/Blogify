@@ -4,7 +4,7 @@ import { User, FileText, LayoutDashboard } from "lucide-react";
 
 function Dashboard() {
   return (
-    <div className=" bg-white border-r border-blue-50 p-4 space-y-6 text-blue-900 sticky top-0 z-10">
+    <div className=" bg-white border-r border-blue-50 p-4 space-y-6 text-blue-900 ">
       <div className="flex items-center gap-3 border-b-2 pb-4 border-gray-100">
         <div className="p-2 bg-blue-100 rounded-lg">
           <LayoutDashboard className="w-5 text-[#1E53A2]" />

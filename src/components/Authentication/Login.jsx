@@ -17,29 +17,15 @@ export default function Login() {
   const [err, setErr] = useState("");
 
   const submit = async (data) => {
-    try {
-      const session = await authService.loginAccount(data);
-      console.log(session);
-      if (session) {
-        const user = await authService.getCurrentuser();
-        if (user) {
-          dispatch(addUser(user));
-          navigate("/");
-        } else {
-          setErr("Login failed. Please try again.");
-        }
+    const session = await authService.loginAccount(data);
+    if (session) {
+      const user = await authService.getCurrentuser();
+      if (user) {
+        dispatch(addUser(user));
+        navigate("/");
       }
-    } catch (error) {
-      console.error("Login failed:", error);
-      // If rate limit exceeded, show the retry message
-      if (error.message.includes("Rate limit")) {
-        setErr(
-          "You have exceeded the rate limit. Please try again after some time."
-        );
-      } else {
-        setErr(error?.message || "Login failed. Please try again.");
-      }
-    }
+    } else setErr("Invalid email or password. Please try again!");
+    console.log(err);
   };
 
   // Handle Google login
@@ -81,7 +67,26 @@ export default function Login() {
             Login Now
           </h2>
 
-          {err && <p>{err}</p>}
+          {err && (
+            <div className="animate-fade-in">
+              <p className="text-red-500 text-sm font-medium bg-red-50 w-full py-2 px-4 text-center rounded-md border border-red-200  flex items-center justify-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 flex-shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {err}
+              </p>
+            </div>
+          )}
 
           <Input
             label="Email :"
@@ -98,7 +103,13 @@ export default function Login() {
             type="password"
             placeholder="e.g : 23lw*********"
             className=" p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            {...register("password", { required: "Password is required" })}
+            {...register("password", {
+              required: "Password is required",
+              minLength: {
+                value: 8,
+                message: "Password must be at least 8 characters",
+              },
+            })}
           />
           {errors.password && (
             <p className="text-red-500 text-sm pl-2">

@@ -24,6 +24,7 @@ class AuthService {
       if (isCreated) return this.loginAccount({ email, password });
     } catch (err) {
       console.log("Create Account Error ::" + err);
+      return err;
     }
   }
 

@@ -21,8 +21,8 @@ function MyAccount() {
       <div className="grid md:grid-cols-[250px_1fr] h-full">
         {/* Sidebar */}
         <div
-          className={`fixed z-100 top-0 right-100  backdrop-blur-sm h-full w-[250px] bg-white border-r border-gray-200 transform transition-transform duration-300 md:static md:translate-x-0 ${
-            isSidebarOpen ? "translate-x-100" : "translate-x-200"
+          className={`fixed z-100 md:z-30 top-0 right-0  backdrop-blur-sm h-full w-[250px] bg-white border-r border-gray-200 transform transition-transform duration-300 md:sticky md:top-0 md:translate-x-0 ${
+            isSidebarOpen ? "translate-x-0 " : "translate-x-100"
           }`}
         >
           <Dashboard />
