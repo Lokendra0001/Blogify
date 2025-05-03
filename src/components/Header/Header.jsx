@@ -138,7 +138,7 @@ function Header() {
 
               {/* Sidebar Content */}
               <div
-                className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl flex flex-col  transform transition-transform duration-300 ease-in-out ${
+                className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl flex flex-col  transform transition-transform duration-300 ease-in-out z-80 ${
                   isSideOpen ? "translate-x-0" : "translate-x-full"
                 }`}
               >
