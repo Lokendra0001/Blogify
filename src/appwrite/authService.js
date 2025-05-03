@@ -50,7 +50,7 @@ class AuthService {
       const user = await this.account.get();
       if (user) return user;
     } catch (error) {
-      // console.log("User NOt Found " + error);
+      // console.log("User Not Found " + error);
       return error;
     }
   }
@@ -58,15 +58,15 @@ class AuthService {
   loginWithGoogle() {
     return this.account.createOAuth2Session(
       "google",
-      "http://blogify03.vercel.app/",
-      "http://blogify03.vercel.app/login"
+      "http://blogify.vercel.app/",
+      "http://blogify.vercel.app/login"
     );
   }
   loginWithGithub() {
     return this.account.createOAuth2Session(
       "github",
-      "http://blogify03.vercel.app/",
-      "http://blogify03.vercel.app/login"
+      "http://blogify.vercel.app/",
+      "http://blogify.vercel.app/login"
     );
   }
 }
