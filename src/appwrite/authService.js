@@ -31,7 +31,7 @@ class AuthService {
   async loginAccount({ email, password }) {
     try {
       return await this.account.createEmailPasswordSession(email, password);
-      return false;
+      return false
     } catch (error) {
       console.log("Login Account error ::" + error);
     }
@@ -52,6 +52,14 @@ class AuthService {
     } catch (error) {
       // console.log("User NOt Found " + error);
       return error;
+    }
+  }
+
+  async getSession() {
+    try {
+      return await account.getSession("current");
+    } catch (error) {
+      return null;
     }
   }
 
