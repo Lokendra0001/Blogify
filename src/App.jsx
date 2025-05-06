@@ -10,7 +10,7 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     const loadingUser = async () => {
-      const user = await authService.getCurrentuser();
+      const user = false;
       if (user) {
         dispatch(addUser(user));
       } else {
