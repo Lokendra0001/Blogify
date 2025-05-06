@@ -7,20 +7,18 @@ import { Outlet, useNavigate } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const loadingUser = async () => {
-  //     const session = JSON.parse(localStorage.getItem("session"));
-  //     if (session) {
-  //       const user = await authService.getCurrentuser();
-  //       if (user) {
-  //         dispatch(addUser(user));
-  //       } else {
-  //         dispatch(removeUser());
-  //       }
-  //     }
-  //   };
-  //   loadingUser();
-  // }, [dispatch]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const loadingUser = async () => {
+      const user = await authService.getCurrentuser();
+      if (user) {
+        dispatch(addUser(user));
+      } else {
+        dispatch(removeUser());
+      }
+    };
+    loadingUser();
+  }, [dispatch]);
 
   return (
     <>

@@ -11,15 +11,10 @@ function LogoutBtn({ children, className }) {
   const handleLogout = async () => {
     await authService.logoutAccount();
     dispatch(removeUser());
-    localStorage.removeItem("session"); // Clear the session
     navigate("/login");
   };
   return (
-    <button
-      onClick={handleLogout}
-      className={`cursor-pointer ${className}`}
-      title="LogOut"
-    >
+    <button onClick={handleLogout} className={`cursor-pointer ${className}`} title="LogOut">
       {children ? children : <img src={logoutPng} alt="" width={25} />}
     </button>
   );

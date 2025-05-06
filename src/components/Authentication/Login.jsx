@@ -21,7 +21,6 @@ export default function Login() {
     if (session) {
       const user = await authService.getCurrentuser();
       if (user) {
-        localStorage.setItem("session", JSON.stringify(session));
         dispatch(addUser(user));
         navigate("/");
       }
