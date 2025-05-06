@@ -13,12 +13,10 @@ function App() {
       const user = false;
       if (user) {
         dispatch(addUser(user));
-      } else {
-        dispatch(removeUser());
       }
     };
     loadingUser();
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
